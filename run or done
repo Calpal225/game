@@ -1,0 +1,39 @@
+import pygame
+import random
+
+# Initialize pygame
+pygame.init()
+
+# Screen dimensions
+SCREEN_WIDTH = 500
+SCREEN_HEIGHT = 600
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+
+# Colors
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+RED = (255, 0, 0)
+
+# Player settings
+PLAYER_WIDTH = 40
+PLAYER_HEIGHT = 60
+player_x = SCREEN_WIDTH // 2 - PLAYER_WIDTH // 2
+player_y = SCREEN_HEIGHT - PLAYER_HEIGHT - 10
+player_speed = 7
+
+# Obstacle settings
+OBSTACLE_WIDTH = 50
+OBSTACLE_HEIGHT = 50
+obstacle_speed = 5
+obstacles = []
+
+# Game clock
+clock = pygame.time.Clock()
+
+# Score
+score = 0
+font = pygame.font.Font(None, 36)
+
+# Function to draw player
+def draw_player(x, y):
+    pygame.draw.rect(screen, RED, [x, y, PLAYER_WIDTH, PLAYER
